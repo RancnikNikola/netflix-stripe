@@ -1,0 +1,310 @@
+[debug] [2023-03-02T14:26:04.438Z] ----------------------------------------------------------------------
+[debug] [2023-03-02T14:26:04.442Z] Command:       /usr/local/bin/firebase /Users/nikolarancnik/.cache/firebase/tools/lib/node_modules/firebase-tools/lib/bin/firebase deploy --only functions
+[debug] [2023-03-02T14:26:04.442Z] CLI Version:   11.24.0
+[debug] [2023-03-02T14:26:04.442Z] Platform:      darwin
+[debug] [2023-03-02T14:26:04.443Z] Node Version:  v16.16.0
+[debug] [2023-03-02T14:26:04.448Z] Time:          Thu Mar 02 2023 15:26:04 GMT+0100 (Central European Standard Time)
+[debug] [2023-03-02T14:26:04.449Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2023-03-02T14:26:04.534Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2023-03-02T14:26:04.535Z] > authorizing via signed-in user (nikolarancnikw@gmail.com)
+[debug] [2023-03-02T14:26:04.535Z] [iam] checking project netflix-stripe-f6d24 for permissions ["cloudfunctions.functions.create","cloudfunctions.functions.delete","cloudfunctions.functions.get","cloudfunctions.functions.list","cloudfunctions.functions.update","cloudfunctions.operations.get","firebase.projects.get"]
+[debug] [2023-03-02T14:26:04.538Z] >>> [apiv2][query] POST https://cloudresourcemanager.googleapis.com/v1/projects/netflix-stripe-f6d24:testIamPermissions [none]
+[debug] [2023-03-02T14:26:04.539Z] >>> [apiv2][(partial)header] POST https://cloudresourcemanager.googleapis.com/v1/projects/netflix-stripe-f6d24:testIamPermissions x-goog-quota-user=projects/netflix-stripe-f6d24
+[debug] [2023-03-02T14:26:04.539Z] >>> [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/netflix-stripe-f6d24:testIamPermissions {"permissions":["cloudfunctions.functions.create","cloudfunctions.functions.delete","cloudfunctions.functions.get","cloudfunctions.functions.list","cloudfunctions.functions.update","cloudfunctions.operations.get","firebase.projects.get"]}
+[debug] [2023-03-02T14:26:05.427Z] <<< [apiv2][status] POST https://cloudresourcemanager.googleapis.com/v1/projects/netflix-stripe-f6d24:testIamPermissions 200
+[debug] [2023-03-02T14:26:05.428Z] <<< [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/netflix-stripe-f6d24:testIamPermissions {"permissions":["cloudfunctions.functions.create","cloudfunctions.functions.delete","cloudfunctions.functions.get","cloudfunctions.functions.list","cloudfunctions.functions.update","cloudfunctions.operations.get","firebase.projects.get"]}
+[debug] [2023-03-02T14:26:05.428Z] >>> [apiv2][query] POST https://iam.googleapis.com/v1/projects/netflix-stripe-f6d24/serviceAccounts/netflix-stripe-f6d24@appspot.gserviceaccount.com:testIamPermissions [none]
+[debug] [2023-03-02T14:26:05.428Z] >>> [apiv2][body] POST https://iam.googleapis.com/v1/projects/netflix-stripe-f6d24/serviceAccounts/netflix-stripe-f6d24@appspot.gserviceaccount.com:testIamPermissions {"permissions":["iam.serviceAccounts.actAs"]}
+[debug] [2023-03-02T14:26:06.163Z] <<< [apiv2][status] POST https://iam.googleapis.com/v1/projects/netflix-stripe-f6d24/serviceAccounts/netflix-stripe-f6d24@appspot.gserviceaccount.com:testIamPermissions 200
+[debug] [2023-03-02T14:26:06.163Z] <<< [apiv2][body] POST https://iam.googleapis.com/v1/projects/netflix-stripe-f6d24/serviceAccounts/netflix-stripe-f6d24@appspot.gserviceaccount.com:testIamPermissions {"permissions":["iam.serviceAccounts.actAs"]}
+[info] 
+[info] === Deploying to 'netflix-stripe-f6d24'...
+[info] 
+[info] i  deploying functions 
+[info] Running command: npm --prefix "$RESOURCE_DIR" run lint
+[info] ✔  functions: Finished running predeploy script. 
+[debug] [2023-03-02T14:26:13.203Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/netflix-stripe-f6d24 [none]
+[debug] [2023-03-02T14:26:13.506Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/netflix-stripe-f6d24 200
+[debug] [2023-03-02T14:26:13.507Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/netflix-stripe-f6d24 {"projectId":"netflix-stripe-f6d24","projectNumber":"705360736424","displayName":"netflix-stripe","name":"projects/netflix-stripe-f6d24","resources":{"hostingSite":"netflix-stripe-f6d24"},"state":"ACTIVE","etag":"1_c89e153c-97c1-46d8-a0d4-b35c7836c740"}
+[info] i  functions: preparing codebase default for deployment 
+[info] i  functions: ensuring required API cloudfunctions.googleapis.com is enabled... 
+[info] i  functions: ensuring required API cloudbuild.googleapis.com is enabled... 
+[info] i  artifactregistry: ensuring required API artifactregistry.googleapis.com is enabled... 
+[debug] [2023-03-02T14:26:13.510Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/netflix-stripe-f6d24/services/cloudfunctions.googleapis.com [none]
+[debug] [2023-03-02T14:26:13.510Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/netflix-stripe-f6d24/services/cloudfunctions.googleapis.com x-goog-quota-user=projects/netflix-stripe-f6d24
+[debug] [2023-03-02T14:26:13.511Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/netflix-stripe-f6d24/services/runtimeconfig.googleapis.com [none]
+[debug] [2023-03-02T14:26:13.512Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/netflix-stripe-f6d24/services/runtimeconfig.googleapis.com x-goog-quota-user=projects/netflix-stripe-f6d24
+[debug] [2023-03-02T14:26:13.513Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/netflix-stripe-f6d24/services/cloudbuild.googleapis.com [none]
+[debug] [2023-03-02T14:26:13.513Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/netflix-stripe-f6d24/services/cloudbuild.googleapis.com x-goog-quota-user=projects/netflix-stripe-f6d24
+[debug] [2023-03-02T14:26:13.515Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/netflix-stripe-f6d24/services/artifactregistry.googleapis.com [none]
+[debug] [2023-03-02T14:26:13.515Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/netflix-stripe-f6d24/services/artifactregistry.googleapis.com x-goog-quota-user=projects/netflix-stripe-f6d24
+[debug] [2023-03-02T14:26:14.565Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/netflix-stripe-f6d24/services/runtimeconfig.googleapis.com 200
+[debug] [2023-03-02T14:26:14.565Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/netflix-stripe-f6d24/services/runtimeconfig.googleapis.com [omitted]
+[debug] [2023-03-02T14:26:14.568Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/netflix-stripe-f6d24/services/cloudbuild.googleapis.com 200
+[debug] [2023-03-02T14:26:14.568Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/netflix-stripe-f6d24/services/cloudbuild.googleapis.com [omitted]
+[warn] ⚠  functions: missing required API cloudbuild.googleapis.com. Enabling now... 
+[debug] [2023-03-02T14:26:14.569Z] >>> [apiv2][query] POST https://serviceusage.googleapis.com/v1/projects/netflix-stripe-f6d24/services/cloudbuild.googleapis.com:enable [none]
+[debug] [2023-03-02T14:26:14.570Z] >>> [apiv2][(partial)header] POST https://serviceusage.googleapis.com/v1/projects/netflix-stripe-f6d24/services/cloudbuild.googleapis.com:enable x-goog-quota-user=projects/netflix-stripe-f6d24
+[debug] [2023-03-02T14:26:14.578Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/netflix-stripe-f6d24/services/artifactregistry.googleapis.com 200
+[debug] [2023-03-02T14:26:14.578Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/netflix-stripe-f6d24/services/artifactregistry.googleapis.com [omitted]
+[warn] ⚠  artifactregistry: missing required API artifactregistry.googleapis.com. Enabling now... 
+[debug] [2023-03-02T14:26:14.578Z] >>> [apiv2][query] POST https://serviceusage.googleapis.com/v1/projects/netflix-stripe-f6d24/services/artifactregistry.googleapis.com:enable [none]
+[debug] [2023-03-02T14:26:14.578Z] >>> [apiv2][(partial)header] POST https://serviceusage.googleapis.com/v1/projects/netflix-stripe-f6d24/services/artifactregistry.googleapis.com:enable x-goog-quota-user=projects/netflix-stripe-f6d24
+[debug] [2023-03-02T14:26:14.583Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/netflix-stripe-f6d24/services/cloudfunctions.googleapis.com 200
+[debug] [2023-03-02T14:26:14.583Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/netflix-stripe-f6d24/services/cloudfunctions.googleapis.com [omitted]
+[info] ✔  functions: required API cloudfunctions.googleapis.com is enabled 
+[debug] [2023-03-02T14:26:16.201Z] <<< [apiv2][status] POST https://serviceusage.googleapis.com/v1/projects/netflix-stripe-f6d24/services/artifactregistry.googleapis.com:enable 200
+[debug] [2023-03-02T14:26:16.201Z] <<< [apiv2][body] POST https://serviceusage.googleapis.com/v1/projects/netflix-stripe-f6d24/services/artifactregistry.googleapis.com:enable [omitted]
+[debug] [2023-03-02T14:26:16.204Z] <<< [apiv2][status] POST https://serviceusage.googleapis.com/v1/projects/netflix-stripe-f6d24/services/cloudbuild.googleapis.com:enable 200
+[debug] [2023-03-02T14:26:16.204Z] <<< [apiv2][body] POST https://serviceusage.googleapis.com/v1/projects/netflix-stripe-f6d24/services/cloudbuild.googleapis.com:enable [omitted]
+[debug] [2023-03-02T14:26:26.205Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/netflix-stripe-f6d24/services/artifactregistry.googleapis.com [none]
+[debug] [2023-03-02T14:26:26.205Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/netflix-stripe-f6d24/services/artifactregistry.googleapis.com x-goog-quota-user=projects/netflix-stripe-f6d24
+[debug] [2023-03-02T14:26:26.208Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/netflix-stripe-f6d24/services/cloudbuild.googleapis.com [none]
+[debug] [2023-03-02T14:26:26.208Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/netflix-stripe-f6d24/services/cloudbuild.googleapis.com x-goog-quota-user=projects/netflix-stripe-f6d24
+[debug] [2023-03-02T14:26:27.260Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/netflix-stripe-f6d24/services/cloudbuild.googleapis.com 200
+[debug] [2023-03-02T14:26:27.260Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/netflix-stripe-f6d24/services/cloudbuild.googleapis.com [omitted]
+[info] ✔  functions: required API cloudbuild.googleapis.com is enabled 
+[debug] [2023-03-02T14:26:27.269Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/netflix-stripe-f6d24/services/artifactregistry.googleapis.com 200
+[debug] [2023-03-02T14:26:27.269Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/netflix-stripe-f6d24/services/artifactregistry.googleapis.com [omitted]
+[info] ✔  artifactregistry: required API artifactregistry.googleapis.com is enabled 
+[debug] [2023-03-02T14:26:27.272Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/netflix-stripe-f6d24/adminSdkConfig [none]
+[debug] [2023-03-02T14:26:27.528Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/netflix-stripe-f6d24/adminSdkConfig 200
+[debug] [2023-03-02T14:26:27.529Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/netflix-stripe-f6d24/adminSdkConfig {"projectId":"netflix-stripe-f6d24","storageBucket":"netflix-stripe-f6d24.appspot.com"}
+[debug] [2023-03-02T14:26:27.529Z] >>> [apiv2][query] GET https://runtimeconfig.googleapis.com/v1beta1/projects/netflix-stripe-f6d24/configs [none]
+[debug] [2023-03-02T14:26:27.786Z] <<< [apiv2][status] GET https://runtimeconfig.googleapis.com/v1beta1/projects/netflix-stripe-f6d24/configs 200
+[debug] [2023-03-02T14:26:27.786Z] <<< [apiv2][body] GET https://runtimeconfig.googleapis.com/v1beta1/projects/netflix-stripe-f6d24/configs {}
+[debug] [2023-03-02T14:26:27.789Z] Validating nodejs source
+[debug] [2023-03-02T14:26:28.857Z] > [functions] package.json contents: {
+  "name": "functions",
+  "description": "Cloud Functions for Firebase",
+  "scripts": {
+    "lint": "eslint .",
+    "serve": "firebase emulators:start --only functions",
+    "shell": "firebase functions:shell",
+    "start": "npm run shell",
+    "deploy": "firebase deploy --only functions",
+    "logs": "firebase functions:log"
+  },
+  "engines": {
+    "node": "16"
+  },
+  "main": "index.js",
+  "dependencies": {
+    "firebase-admin": "^11.5.0",
+    "firebase-functions": "^4.2.1"
+  },
+  "devDependencies": {
+    "eslint": "^8.15.0",
+    "eslint-config-google": "^0.14.0",
+    "firebase-functions-test": "^3.0.0"
+  },
+  "private": true
+}
+[debug] [2023-03-02T14:26:28.858Z] Building nodejs source
+[debug] [2023-03-02T14:26:28.860Z] Could not find functions.yaml. Must use http discovery
+[debug] [2023-03-02T14:26:28.880Z] Found firebase-functions binary at '/Users/nikolarancnik/Desktop/netflix-stripe/functions/node_modules/.bin/firebase-functions'
+[debug] [2023-03-02T14:26:30.029Z] Serving at port 8434
+
+[debug] [2023-03-02T14:26:30.471Z] Got response from /__/functions.yaml {"endpoints":{"events":{"platform":"gcfv1","availableMemoryMb":null,"timeoutSeconds":null,"minInstances":null,"maxInstances":null,"ingressSettings":null,"serviceAccountEmail":null,"vpc":null,"httpsTrigger":{},"entryPoint":"events"}},"specVersion":"v1alpha1","requiredAPIs":[]}
+[debug] [2023-03-02T14:26:30.480Z] shutdown requested via /__/quitquitquit
+
+[info] i  functions: preparing functions directory for uploading... 
+[info] i  functions: packaged /Users/nikolarancnik/Desktop/netflix-stripe/functions (82.15 KB) for uploading 
+[debug] [2023-03-02T14:26:30.592Z] >>> [apiv2][query] GET https://cloudfunctions.googleapis.com/v1/projects/netflix-stripe-f6d24/locations/-/functions [none]
+[debug] [2023-03-02T14:26:31.149Z] <<< [apiv2][status] GET https://cloudfunctions.googleapis.com/v1/projects/netflix-stripe-f6d24/locations/-/functions 200
+[debug] [2023-03-02T14:26:31.149Z] <<< [apiv2][body] GET https://cloudfunctions.googleapis.com/v1/projects/netflix-stripe-f6d24/locations/-/functions {}
+[debug] [2023-03-02T14:26:31.150Z] >>> [apiv2][query] GET https://cloudfunctions.googleapis.com/v2/projects/netflix-stripe-f6d24/locations/-/functions filter=environment%3D%22GEN_2%22
+[debug] [2023-03-02T14:26:32.273Z] <<< [apiv2][status] GET https://cloudfunctions.googleapis.com/v2/projects/netflix-stripe-f6d24/locations/-/functions 200
+[debug] [2023-03-02T14:26:32.273Z] <<< [apiv2][body] GET https://cloudfunctions.googleapis.com/v2/projects/netflix-stripe-f6d24/locations/-/functions {}
+[debug] [2023-03-02T14:26:32.281Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/netflix-stripe-f6d24 [none]
+[debug] [2023-03-02T14:26:32.566Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/netflix-stripe-f6d24 200
+[debug] [2023-03-02T14:26:32.566Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/netflix-stripe-f6d24 {"projectId":"netflix-stripe-f6d24","projectNumber":"705360736424","displayName":"netflix-stripe","name":"projects/netflix-stripe-f6d24","resources":{"hostingSite":"netflix-stripe-f6d24"},"state":"ACTIVE","etag":"1_c89e153c-97c1-46d8-a0d4-b35c7836c740"}
+[debug] [2023-03-02T14:26:32.568Z] [functions] found 1 new HTTP functions, testing setIamPolicy permission...
+[debug] [2023-03-02T14:26:32.568Z] >>> [apiv2][query] POST https://cloudresourcemanager.googleapis.com/v1/projects/netflix-stripe-f6d24:testIamPermissions [none]
+[debug] [2023-03-02T14:26:32.568Z] >>> [apiv2][(partial)header] POST https://cloudresourcemanager.googleapis.com/v1/projects/netflix-stripe-f6d24:testIamPermissions x-goog-quota-user=projects/netflix-stripe-f6d24
+[debug] [2023-03-02T14:26:32.569Z] >>> [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/netflix-stripe-f6d24:testIamPermissions {"permissions":["cloudfunctions.functions.setIamPolicy"]}
+[debug] [2023-03-02T14:26:33.326Z] <<< [apiv2][status] POST https://cloudresourcemanager.googleapis.com/v1/projects/netflix-stripe-f6d24:testIamPermissions 200
+[debug] [2023-03-02T14:26:33.326Z] <<< [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/netflix-stripe-f6d24:testIamPermissions {"permissions":["cloudfunctions.functions.setIamPolicy"]}
+[debug] [2023-03-02T14:26:33.326Z] [functions] found setIamPolicy permission, proceeding with deploy
+[debug] [2023-03-02T14:26:33.327Z] >>> [apiv2][query] POST https://cloudfunctions.googleapis.com/v1/projects/netflix-stripe-f6d24/locations/us-central1/functions:generateUploadUrl [none]
+[debug] [2023-03-02T14:26:33.327Z] >>> [apiv2][body] POST https://cloudfunctions.googleapis.com/v1/projects/netflix-stripe-f6d24/locations/us-central1/functions:generateUploadUrl {}
+[debug] [2023-03-02T14:26:43.230Z] <<< [apiv2][status] POST https://cloudfunctions.googleapis.com/v1/projects/netflix-stripe-f6d24/locations/us-central1/functions:generateUploadUrl 200
+[debug] [2023-03-02T14:26:43.230Z] <<< [apiv2][body] POST https://cloudfunctions.googleapis.com/v1/projects/netflix-stripe-f6d24/locations/us-central1/functions:generateUploadUrl {"uploadUrl":"https://storage.googleapis.com/uploads-925139283392.us-central1.cloudfunctions.appspot.com/ce28fc8c-4c5f-4fce-ad2b-00a40c0a3191.zip?GoogleAccessId=service-705360736424@gcf-admin-robot.iam.gserviceaccount.com&Expires=1677769003&Signature=CpQllg3eW1G5iV7%2BsZ6jwThT8w4n4A3evHl50OJUXM17q1c54PE3fn3mrNbyCKjaG9y5WeOPTNGZdrZ2msEfZtKxFgOdqJ6zBJoaMJZOmfZihiUCs%2FpdFyT5DOZ5K76DvcbDyydT3fv%2BE081XFeZtHqDxhdlCY43tCFfmipPmfanYYFXbZ7%2BvJvghzvPPbihRITTAcxGkJmHYM8g8vFNIEVA0xZ4o76ja8RAR6eNSQy%2BRiC3BB3T1tb1LOeYAKMbw648NeyW4haPP%2FYVKUumZUYMmvovZOQCqEQIlQbl3H0dJrZ2tgg%2B5IBzpUsOKfnEJGELCBdlcDkMtdm7A5iR%2Bw%3D%3D"}
+[debug] [2023-03-02T14:26:43.231Z] >>> [apiv2][query] PUT https://storage.googleapis.com/uploads-925139283392.us-central1.cloudfunctions.appspot.com/ce28fc8c-4c5f-4fce-ad2b-00a40c0a3191.zip GoogleAccessId=service-705360736424%40gcf-admin-robot.iam.gserviceaccount.com&Expires=1677769003&Signature=CpQllg3eW1G5iV7%2BsZ6jwThT8w4n4A3evHl50OJUXM17q1c54PE3fn3mrNbyCKjaG9y5WeOPTNGZdrZ2msEfZtKxFgOdqJ6zBJoaMJZOmfZihiUCs%2FpdFyT5DOZ5K76DvcbDyydT3fv%2BE081XFeZtHqDxhdlCY43tCFfmipPmfanYYFXbZ7%2BvJvghzvPPbihRITTAcxGkJmHYM8g8vFNIEVA0xZ4o76ja8RAR6eNSQy%2BRiC3BB3T1tb1LOeYAKMbw648NeyW4haPP%2FYVKUumZUYMmvovZOQCqEQIlQbl3H0dJrZ2tgg%2B5IBzpUsOKfnEJGELCBdlcDkMtdm7A5iR%2Bw%3D%3D
+[debug] [2023-03-02T14:26:43.231Z] >>> [apiv2][body] PUT https://storage.googleapis.com/uploads-925139283392.us-central1.cloudfunctions.appspot.com/ce28fc8c-4c5f-4fce-ad2b-00a40c0a3191.zip [stream]
+[debug] [2023-03-02T14:26:43.747Z] <<< [apiv2][status] PUT https://storage.googleapis.com/uploads-925139283392.us-central1.cloudfunctions.appspot.com/ce28fc8c-4c5f-4fce-ad2b-00a40c0a3191.zip 200
+[debug] [2023-03-02T14:26:43.748Z] <<< [apiv2][body] PUT https://storage.googleapis.com/uploads-925139283392.us-central1.cloudfunctions.appspot.com/ce28fc8c-4c5f-4fce-ad2b-00a40c0a3191.zip [omitted]
+[info] ✔  functions: functions folder uploaded successfully 
+[info] i  functions: creating Node.js 16 function events(us-central1)... 
+[debug] [2023-03-02T14:26:43.753Z] >>> [apiv2][query] POST https://cloudfunctions.googleapis.com/v1/projects/netflix-stripe-f6d24/locations/us-central1/functions [none]
+[debug] [2023-03-02T14:26:43.753Z] >>> [apiv2][body] POST https://cloudfunctions.googleapis.com/v1/projects/netflix-stripe-f6d24/locations/us-central1/functions {"name":"projects/netflix-stripe-f6d24/locations/us-central1/functions/events","sourceUploadUrl":"https://storage.googleapis.com/uploads-925139283392.us-central1.cloudfunctions.appspot.com/ce28fc8c-4c5f-4fce-ad2b-00a40c0a3191.zip?GoogleAccessId=service-705360736424@gcf-admin-robot.iam.gserviceaccount.com&Expires=1677769003&Signature=CpQllg3eW1G5iV7%2BsZ6jwThT8w4n4A3evHl50OJUXM17q1c54PE3fn3mrNbyCKjaG9y5WeOPTNGZdrZ2msEfZtKxFgOdqJ6zBJoaMJZOmfZihiUCs%2FpdFyT5DOZ5K76DvcbDyydT3fv%2BE081XFeZtHqDxhdlCY43tCFfmipPmfanYYFXbZ7%2BvJvghzvPPbihRITTAcxGkJmHYM8g8vFNIEVA0xZ4o76ja8RAR6eNSQy%2BRiC3BB3T1tb1LOeYAKMbw648NeyW4haPP%2FYVKUumZUYMmvovZOQCqEQIlQbl3H0dJrZ2tgg%2B5IBzpUsOKfnEJGELCBdlcDkMtdm7A5iR%2Bw%3D%3D","entryPoint":"events","runtime":"nodejs16","dockerRegistry":"ARTIFACT_REGISTRY","labels":{"deployment-tool":"cli-firebase","firebase-functions-hash":"9676503fa0dbe52dedc28adc709f6e1abdb853f4"},"httpsTrigger":{"securityLevel":"SECURE_ALWAYS"},"minInstances":null,"maxInstances":null,"ingressSettings":null,"environmentVariables":{"FIREBASE_CONFIG":"{\"projectId\":\"netflix-stripe-f6d24\",\"storageBucket\":\"netflix-stripe-f6d24.appspot.com\"}","GCLOUD_PROJECT":"netflix-stripe-f6d24","EVENTARC_CLOUD_EVENT_SOURCE":"projects/netflix-stripe-f6d24/locations/us-central1/functions/events"},"serviceAccountEmail":null,"availableMemoryMb":null,"timeout":null,"vpcConnector":null,"vpcConnectorEgressSettings":null}
+[debug] [2023-03-02T14:26:44.460Z] <<< [apiv2][status] POST https://cloudfunctions.googleapis.com/v1/projects/netflix-stripe-f6d24/locations/us-central1/functions 200
+[debug] [2023-03-02T14:26:44.460Z] <<< [apiv2][body] POST https://cloudfunctions.googleapis.com/v1/projects/netflix-stripe-f6d24/locations/us-central1/functions {"name":"operations/bmV0ZmxpeC1zdHJpcGUtZjZkMjQvdXMtY2VudHJhbDEvZXZlbnRzL1VxQXNoWDFVVXpj","metadata":{"@type":"type.googleapis.com/google.cloud.functions.v1.OperationMetadataV1","target":"projects/netflix-stripe-f6d24/locations/us-central1/functions/events","type":"CREATE_FUNCTION","request":{"@type":"type.googleapis.com/google.cloud.functions.v1.CloudFunction","name":"projects/netflix-stripe-f6d24/locations/us-central1/functions/events","httpsTrigger":{"securityLevel":"SECURE_ALWAYS"},"entryPoint":"events","labels":{"deployment-tool":"cli-firebase","firebase-functions-hash":"9676503fa0dbe52dedc28adc709f6e1abdb853f4"},"sourceUploadUrl":"https://storage.googleapis.com/uploads-925139283392.us-central1.cloudfunctions.appspot.com/ce28fc8c-4c5f-4fce-ad2b-00a40c0a3191.zip?GoogleAccessId=service-705360736424@gcf-admin-robot.iam.gserviceaccount.com&Expires=1677769003&Signature=CpQllg3eW1G5iV7%2BsZ6jwThT8w4n4A3evHl50OJUXM17q1c54PE3fn3mrNbyCKjaG9y5WeOPTNGZdrZ2msEfZtKxFgOdqJ6zBJoaMJZOmfZihiUCs%2FpdFyT5DOZ5K76DvcbDyydT3fv%2BE081XFeZtHqDxhdlCY43tCFfmipPmfanYYFXbZ7%2BvJvghzvPPbihRITTAcxGkJmHYM8g8vFNIEVA0xZ4o76ja8RAR6eNSQy%2BRiC3BB3T1tb1LOeYAKMbw648NeyW4haPP%2FYVKUumZUYMmvovZOQCqEQIlQbl3H0dJrZ2tgg%2B5IBzpUsOKfnEJGELCBdlcDkMtdm7A5iR%2Bw%3D%3D","environmentVariables":{"FIREBASE_CONFIG":"{\"projectId\":\"netflix-stripe-f6d24\",\"storageBucket\":\"netflix-stripe-f6d24.appspot.com\"}","GCLOUD_PROJECT":"netflix-stripe-f6d24","EVENTARC_CLOUD_EVENT_SOURCE":"projects/netflix-stripe-f6d24/locations/us-central1/functions/events"},"runtime":"nodejs16","dockerRegistry":"ARTIFACT_REGISTRY"},"versionId":"1","updateTime":"2023-03-02T14:26:44Z"}}
+[debug] [2023-03-02T14:26:44.461Z] >>> [apiv2][query] GET https://cloudfunctions.googleapis.com/v1/operations/bmV0ZmxpeC1zdHJpcGUtZjZkMjQvdXMtY2VudHJhbDEvZXZlbnRzL1VxQXNoWDFVVXpj [none]
+[debug] [2023-03-02T14:26:44.696Z] <<< [apiv2][status] GET https://cloudfunctions.googleapis.com/v1/operations/bmV0ZmxpeC1zdHJpcGUtZjZkMjQvdXMtY2VudHJhbDEvZXZlbnRzL1VxQXNoWDFVVXpj 200
+[debug] [2023-03-02T14:26:44.697Z] <<< [apiv2][body] GET https://cloudfunctions.googleapis.com/v1/operations/bmV0ZmxpeC1zdHJpcGUtZjZkMjQvdXMtY2VudHJhbDEvZXZlbnRzL1VxQXNoWDFVVXpj {"name":"operations/bmV0ZmxpeC1zdHJpcGUtZjZkMjQvdXMtY2VudHJhbDEvZXZlbnRzL1VxQXNoWDFVVXpj","metadata":{"@type":"type.googleapis.com/google.cloud.functions.v1.OperationMetadataV1","target":"projects/netflix-stripe-f6d24/locations/us-central1/functions/events","type":"CREATE_FUNCTION","request":{"@type":"type.googleapis.com/google.cloud.functions.v1.CloudFunction","name":"projects/netflix-stripe-f6d24/locations/us-central1/functions/events","httpsTrigger":{"securityLevel":"SECURE_ALWAYS"},"entryPoint":"events","labels":{"deployment-tool":"cli-firebase","firebase-functions-hash":"9676503fa0dbe52dedc28adc709f6e1abdb853f4"},"sourceUploadUrl":"https://storage.googleapis.com/uploads-925139283392.us-central1.cloudfunctions.appspot.com/ce28fc8c-4c5f-4fce-ad2b-00a40c0a3191.zip?GoogleAccessId=service-705360736424@gcf-admin-robot.iam.gserviceaccount.com&Expires=1677769003&Signature=CpQllg3eW1G5iV7%2BsZ6jwThT8w4n4A3evHl50OJUXM17q1c54PE3fn3mrNbyCKjaG9y5WeOPTNGZdrZ2msEfZtKxFgOdqJ6zBJoaMJZOmfZihiUCs%2FpdFyT5DOZ5K76DvcbDyydT3fv%2BE081XFeZtHqDxhdlCY43tCFfmipPmfanYYFXbZ7%2BvJvghzvPPbihRITTAcxGkJmHYM8g8vFNIEVA0xZ4o76ja8RAR6eNSQy%2BRiC3BB3T1tb1LOeYAKMbw648NeyW4haPP%2FYVKUumZUYMmvovZOQCqEQIlQbl3H0dJrZ2tgg%2B5IBzpUsOKfnEJGELCBdlcDkMtdm7A5iR%2Bw%3D%3D","environmentVariables":{"FIREBASE_CONFIG":"{\"projectId\":\"netflix-stripe-f6d24\",\"storageBucket\":\"netflix-stripe-f6d24.appspot.com\"}","GCLOUD_PROJECT":"netflix-stripe-f6d24","EVENTARC_CLOUD_EVENT_SOURCE":"projects/netflix-stripe-f6d24/locations/us-central1/functions/events"},"runtime":"nodejs16","dockerRegistry":"ARTIFACT_REGISTRY"},"versionId":"1","updateTime":"2023-03-02T14:26:44Z"}}
+[debug] [2023-03-02T14:26:45.197Z] [create-default-us-central1-events] Retrying task index 0
+[debug] [2023-03-02T14:26:45.198Z] >>> [apiv2][query] GET https://cloudfunctions.googleapis.com/v1/operations/bmV0ZmxpeC1zdHJpcGUtZjZkMjQvdXMtY2VudHJhbDEvZXZlbnRzL1VxQXNoWDFVVXpj [none]
+[debug] [2023-03-02T14:26:45.451Z] <<< [apiv2][status] GET https://cloudfunctions.googleapis.com/v1/operations/bmV0ZmxpeC1zdHJpcGUtZjZkMjQvdXMtY2VudHJhbDEvZXZlbnRzL1VxQXNoWDFVVXpj 200
+[debug] [2023-03-02T14:26:45.451Z] <<< [apiv2][body] GET https://cloudfunctions.googleapis.com/v1/operations/bmV0ZmxpeC1zdHJpcGUtZjZkMjQvdXMtY2VudHJhbDEvZXZlbnRzL1VxQXNoWDFVVXpj {"name":"operations/bmV0ZmxpeC1zdHJpcGUtZjZkMjQvdXMtY2VudHJhbDEvZXZlbnRzL1VxQXNoWDFVVXpj","metadata":{"@type":"type.googleapis.com/google.cloud.functions.v1.OperationMetadataV1","target":"projects/netflix-stripe-f6d24/locations/us-central1/functions/events","type":"CREATE_FUNCTION","request":{"@type":"type.googleapis.com/google.cloud.functions.v1.CloudFunction","name":"projects/netflix-stripe-f6d24/locations/us-central1/functions/events","httpsTrigger":{"securityLevel":"SECURE_ALWAYS"},"entryPoint":"events","labels":{"deployment-tool":"cli-firebase","firebase-functions-hash":"9676503fa0dbe52dedc28adc709f6e1abdb853f4"},"sourceUploadUrl":"https://storage.googleapis.com/uploads-925139283392.us-central1.cloudfunctions.appspot.com/ce28fc8c-4c5f-4fce-ad2b-00a40c0a3191.zip?GoogleAccessId=service-705360736424@gcf-admin-robot.iam.gserviceaccount.com&Expires=1677769003&Signature=CpQllg3eW1G5iV7%2BsZ6jwThT8w4n4A3evHl50OJUXM17q1c54PE3fn3mrNbyCKjaG9y5WeOPTNGZdrZ2msEfZtKxFgOdqJ6zBJoaMJZOmfZihiUCs%2FpdFyT5DOZ5K76DvcbDyydT3fv%2BE081XFeZtHqDxhdlCY43tCFfmipPmfanYYFXbZ7%2BvJvghzvPPbihRITTAcxGkJmHYM8g8vFNIEVA0xZ4o76ja8RAR6eNSQy%2BRiC3BB3T1tb1LOeYAKMbw648NeyW4haPP%2FYVKUumZUYMmvovZOQCqEQIlQbl3H0dJrZ2tgg%2B5IBzpUsOKfnEJGELCBdlcDkMtdm7A5iR%2Bw%3D%3D","environmentVariables":{"FIREBASE_CONFIG":"{\"projectId\":\"netflix-stripe-f6d24\",\"storageBucket\":\"netflix-stripe-f6d24.appspot.com\"}","GCLOUD_PROJECT":"netflix-stripe-f6d24","EVENTARC_CLOUD_EVENT_SOURCE":"projects/netflix-stripe-f6d24/locations/us-central1/functions/events"},"runtime":"nodejs16","dockerRegistry":"ARTIFACT_REGISTRY"},"versionId":"1","updateTime":"2023-03-02T14:26:44Z"}}
+[debug] [2023-03-02T14:26:46.453Z] [create-default-us-central1-events] Retrying task index 0
+[debug] [2023-03-02T14:26:46.454Z] > refreshing access token with scopes: []
+[debug] [2023-03-02T14:26:46.455Z] >>> [apiv2][query] POST https://www.googleapis.com/oauth2/v3/token [none]
+[debug] [2023-03-02T14:26:46.455Z] >>> [apiv2][body] POST https://www.googleapis.com/oauth2/v3/token [omitted]
+[debug] [2023-03-02T14:26:46.595Z] <<< [apiv2][status] POST https://www.googleapis.com/oauth2/v3/token 200
+[debug] [2023-03-02T14:26:46.595Z] <<< [apiv2][body] POST https://www.googleapis.com/oauth2/v3/token [omitted]
+[debug] [2023-03-02T14:26:46.644Z] >>> [apiv2][query] GET https://cloudfunctions.googleapis.com/v1/operations/bmV0ZmxpeC1zdHJpcGUtZjZkMjQvdXMtY2VudHJhbDEvZXZlbnRzL1VxQXNoWDFVVXpj [none]
+[debug] [2023-03-02T14:26:46.885Z] <<< [apiv2][status] GET https://cloudfunctions.googleapis.com/v1/operations/bmV0ZmxpeC1zdHJpcGUtZjZkMjQvdXMtY2VudHJhbDEvZXZlbnRzL1VxQXNoWDFVVXpj 200
+[debug] [2023-03-02T14:26:46.885Z] <<< [apiv2][body] GET https://cloudfunctions.googleapis.com/v1/operations/bmV0ZmxpeC1zdHJpcGUtZjZkMjQvdXMtY2VudHJhbDEvZXZlbnRzL1VxQXNoWDFVVXpj {"name":"operations/bmV0ZmxpeC1zdHJpcGUtZjZkMjQvdXMtY2VudHJhbDEvZXZlbnRzL1VxQXNoWDFVVXpj","metadata":{"@type":"type.googleapis.com/google.cloud.functions.v1.OperationMetadataV1","target":"projects/netflix-stripe-f6d24/locations/us-central1/functions/events","type":"CREATE_FUNCTION","request":{"@type":"type.googleapis.com/google.cloud.functions.v1.CloudFunction","name":"projects/netflix-stripe-f6d24/locations/us-central1/functions/events","httpsTrigger":{"securityLevel":"SECURE_ALWAYS"},"entryPoint":"events","labels":{"deployment-tool":"cli-firebase","firebase-functions-hash":"9676503fa0dbe52dedc28adc709f6e1abdb853f4"},"sourceUploadUrl":"https://storage.googleapis.com/uploads-925139283392.us-central1.cloudfunctions.appspot.com/ce28fc8c-4c5f-4fce-ad2b-00a40c0a3191.zip?GoogleAccessId=service-705360736424@gcf-admin-robot.iam.gserviceaccount.com&Expires=1677769003&Signature=CpQllg3eW1G5iV7%2BsZ6jwThT8w4n4A3evHl50OJUXM17q1c54PE3fn3mrNbyCKjaG9y5WeOPTNGZdrZ2msEfZtKxFgOdqJ6zBJoaMJZOmfZihiUCs%2FpdFyT5DOZ5K76DvcbDyydT3fv%2BE081XFeZtHqDxhdlCY43tCFfmipPmfanYYFXbZ7%2BvJvghzvPPbihRITTAcxGkJmHYM8g8vFNIEVA0xZ4o76ja8RAR6eNSQy%2BRiC3BB3T1tb1LOeYAKMbw648NeyW4haPP%2FYVKUumZUYMmvovZOQCqEQIlQbl3H0dJrZ2tgg%2B5IBzpUsOKfnEJGELCBdlcDkMtdm7A5iR%2Bw%3D%3D","environmentVariables":{"FIREBASE_CONFIG":"{\"projectId\":\"netflix-stripe-f6d24\",\"storageBucket\":\"netflix-stripe-f6d24.appspot.com\"}","GCLOUD_PROJECT":"netflix-stripe-f6d24","EVENTARC_CLOUD_EVENT_SOURCE":"projects/netflix-stripe-f6d24/locations/us-central1/functions/events"},"runtime":"nodejs16","dockerRegistry":"ARTIFACT_REGISTRY"},"versionId":"1","updateTime":"2023-03-02T14:26:44Z"}}
+[debug] [2023-03-02T14:26:48.887Z] [create-default-us-central1-events] Retrying task index 0
+[debug] [2023-03-02T14:26:48.887Z] >>> [apiv2][query] GET https://cloudfunctions.googleapis.com/v1/operations/bmV0ZmxpeC1zdHJpcGUtZjZkMjQvdXMtY2VudHJhbDEvZXZlbnRzL1VxQXNoWDFVVXpj [none]
+[debug] [2023-03-02T14:26:49.134Z] <<< [apiv2][status] GET https://cloudfunctions.googleapis.com/v1/operations/bmV0ZmxpeC1zdHJpcGUtZjZkMjQvdXMtY2VudHJhbDEvZXZlbnRzL1VxQXNoWDFVVXpj 200
+[debug] [2023-03-02T14:26:49.134Z] <<< [apiv2][body] GET https://cloudfunctions.googleapis.com/v1/operations/bmV0ZmxpeC1zdHJpcGUtZjZkMjQvdXMtY2VudHJhbDEvZXZlbnRzL1VxQXNoWDFVVXpj {"name":"operations/bmV0ZmxpeC1zdHJpcGUtZjZkMjQvdXMtY2VudHJhbDEvZXZlbnRzL1VxQXNoWDFVVXpj","metadata":{"@type":"type.googleapis.com/google.cloud.functions.v1.OperationMetadataV1","target":"projects/netflix-stripe-f6d24/locations/us-central1/functions/events","type":"CREATE_FUNCTION","request":{"@type":"type.googleapis.com/google.cloud.functions.v1.CloudFunction","name":"projects/netflix-stripe-f6d24/locations/us-central1/functions/events","httpsTrigger":{"securityLevel":"SECURE_ALWAYS"},"entryPoint":"events","labels":{"deployment-tool":"cli-firebase","firebase-functions-hash":"9676503fa0dbe52dedc28adc709f6e1abdb853f4"},"sourceUploadUrl":"https://storage.googleapis.com/uploads-925139283392.us-central1.cloudfunctions.appspot.com/ce28fc8c-4c5f-4fce-ad2b-00a40c0a3191.zip?GoogleAccessId=service-705360736424@gcf-admin-robot.iam.gserviceaccount.com&Expires=1677769003&Signature=CpQllg3eW1G5iV7%2BsZ6jwThT8w4n4A3evHl50OJUXM17q1c54PE3fn3mrNbyCKjaG9y5WeOPTNGZdrZ2msEfZtKxFgOdqJ6zBJoaMJZOmfZihiUCs%2FpdFyT5DOZ5K76DvcbDyydT3fv%2BE081XFeZtHqDxhdlCY43tCFfmipPmfanYYFXbZ7%2BvJvghzvPPbihRITTAcxGkJmHYM8g8vFNIEVA0xZ4o76ja8RAR6eNSQy%2BRiC3BB3T1tb1LOeYAKMbw648NeyW4haPP%2FYVKUumZUYMmvovZOQCqEQIlQbl3H0dJrZ2tgg%2B5IBzpUsOKfnEJGELCBdlcDkMtdm7A5iR%2Bw%3D%3D","environmentVariables":{"FIREBASE_CONFIG":"{\"projectId\":\"netflix-stripe-f6d24\",\"storageBucket\":\"netflix-stripe-f6d24.appspot.com\"}","GCLOUD_PROJECT":"netflix-stripe-f6d24","EVENTARC_CLOUD_EVENT_SOURCE":"projects/netflix-stripe-f6d24/locations/us-central1/functions/events"},"runtime":"nodejs16","dockerRegistry":"ARTIFACT_REGISTRY"},"versionId":"1","updateTime":"2023-03-02T14:26:44Z"}}
+[debug] [2023-03-02T14:26:53.135Z] [create-default-us-central1-events] Retrying task index 0
+[debug] [2023-03-02T14:26:53.135Z] >>> [apiv2][query] GET https://cloudfunctions.googleapis.com/v1/operations/bmV0ZmxpeC1zdHJpcGUtZjZkMjQvdXMtY2VudHJhbDEvZXZlbnRzL1VxQXNoWDFVVXpj [none]
+[debug] [2023-03-02T14:26:53.402Z] <<< [apiv2][status] GET https://cloudfunctions.googleapis.com/v1/operations/bmV0ZmxpeC1zdHJpcGUtZjZkMjQvdXMtY2VudHJhbDEvZXZlbnRzL1VxQXNoWDFVVXpj 200
+[debug] [2023-03-02T14:26:53.402Z] <<< [apiv2][body] GET https://cloudfunctions.googleapis.com/v1/operations/bmV0ZmxpeC1zdHJpcGUtZjZkMjQvdXMtY2VudHJhbDEvZXZlbnRzL1VxQXNoWDFVVXpj {"name":"operations/bmV0ZmxpeC1zdHJpcGUtZjZkMjQvdXMtY2VudHJhbDEvZXZlbnRzL1VxQXNoWDFVVXpj","metadata":{"@type":"type.googleapis.com/google.cloud.functions.v1.OperationMetadataV1","target":"projects/netflix-stripe-f6d24/locations/us-central1/functions/events","type":"CREATE_FUNCTION","request":{"@type":"type.googleapis.com/google.cloud.functions.v1.CloudFunction","name":"projects/netflix-stripe-f6d24/locations/us-central1/functions/events","httpsTrigger":{"securityLevel":"SECURE_ALWAYS"},"entryPoint":"events","labels":{"deployment-tool":"cli-firebase","firebase-functions-hash":"9676503fa0dbe52dedc28adc709f6e1abdb853f4"},"sourceUploadUrl":"https://storage.googleapis.com/uploads-925139283392.us-central1.cloudfunctions.appspot.com/ce28fc8c-4c5f-4fce-ad2b-00a40c0a3191.zip?GoogleAccessId=service-705360736424@gcf-admin-robot.iam.gserviceaccount.com&Expires=1677769003&Signature=CpQllg3eW1G5iV7%2BsZ6jwThT8w4n4A3evHl50OJUXM17q1c54PE3fn3mrNbyCKjaG9y5WeOPTNGZdrZ2msEfZtKxFgOdqJ6zBJoaMJZOmfZihiUCs%2FpdFyT5DOZ5K76DvcbDyydT3fv%2BE081XFeZtHqDxhdlCY43tCFfmipPmfanYYFXbZ7%2BvJvghzvPPbihRITTAcxGkJmHYM8g8vFNIEVA0xZ4o76ja8RAR6eNSQy%2BRiC3BB3T1tb1LOeYAKMbw648NeyW4haPP%2FYVKUumZUYMmvovZOQCqEQIlQbl3H0dJrZ2tgg%2B5IBzpUsOKfnEJGELCBdlcDkMtdm7A5iR%2Bw%3D%3D","environmentVariables":{"FIREBASE_CONFIG":"{\"projectId\":\"netflix-stripe-f6d24\",\"storageBucket\":\"netflix-stripe-f6d24.appspot.com\"}","GCLOUD_PROJECT":"netflix-stripe-f6d24","EVENTARC_CLOUD_EVENT_SOURCE":"projects/netflix-stripe-f6d24/locations/us-central1/functions/events"},"runtime":"nodejs16","dockerRegistry":"ARTIFACT_REGISTRY"},"versionId":"1","updateTime":"2023-03-02T14:26:44Z"}}
+[debug] [2023-03-02T14:27:01.403Z] [create-default-us-central1-events] Retrying task index 0
+[debug] [2023-03-02T14:27:01.403Z] >>> [apiv2][query] GET https://cloudfunctions.googleapis.com/v1/operations/bmV0ZmxpeC1zdHJpcGUtZjZkMjQvdXMtY2VudHJhbDEvZXZlbnRzL1VxQXNoWDFVVXpj [none]
+[debug] [2023-03-02T14:27:01.636Z] <<< [apiv2][status] GET https://cloudfunctions.googleapis.com/v1/operations/bmV0ZmxpeC1zdHJpcGUtZjZkMjQvdXMtY2VudHJhbDEvZXZlbnRzL1VxQXNoWDFVVXpj 200
+[debug] [2023-03-02T14:27:01.636Z] <<< [apiv2][body] GET https://cloudfunctions.googleapis.com/v1/operations/bmV0ZmxpeC1zdHJpcGUtZjZkMjQvdXMtY2VudHJhbDEvZXZlbnRzL1VxQXNoWDFVVXpj {"name":"operations/bmV0ZmxpeC1zdHJpcGUtZjZkMjQvdXMtY2VudHJhbDEvZXZlbnRzL1VxQXNoWDFVVXpj","metadata":{"@type":"type.googleapis.com/google.cloud.functions.v1.OperationMetadataV1","target":"projects/netflix-stripe-f6d24/locations/us-central1/functions/events","type":"CREATE_FUNCTION","request":{"@type":"type.googleapis.com/google.cloud.functions.v1.CloudFunction","name":"projects/netflix-stripe-f6d24/locations/us-central1/functions/events","httpsTrigger":{"securityLevel":"SECURE_ALWAYS"},"entryPoint":"events","labels":{"deployment-tool":"cli-firebase","firebase-functions-hash":"9676503fa0dbe52dedc28adc709f6e1abdb853f4"},"sourceUploadUrl":"https://storage.googleapis.com/uploads-925139283392.us-central1.cloudfunctions.appspot.com/ce28fc8c-4c5f-4fce-ad2b-00a40c0a3191.zip?GoogleAccessId=service-705360736424@gcf-admin-robot.iam.gserviceaccount.com&Expires=1677769003&Signature=CpQllg3eW1G5iV7%2BsZ6jwThT8w4n4A3evHl50OJUXM17q1c54PE3fn3mrNbyCKjaG9y5WeOPTNGZdrZ2msEfZtKxFgOdqJ6zBJoaMJZOmfZihiUCs%2FpdFyT5DOZ5K76DvcbDyydT3fv%2BE081XFeZtHqDxhdlCY43tCFfmipPmfanYYFXbZ7%2BvJvghzvPPbihRITTAcxGkJmHYM8g8vFNIEVA0xZ4o76ja8RAR6eNSQy%2BRiC3BB3T1tb1LOeYAKMbw648NeyW4haPP%2FYVKUumZUYMmvovZOQCqEQIlQbl3H0dJrZ2tgg%2B5IBzpUsOKfnEJGELCBdlcDkMtdm7A5iR%2Bw%3D%3D","environmentVariables":{"FIREBASE_CONFIG":"{\"projectId\":\"netflix-stripe-f6d24\",\"storageBucket\":\"netflix-stripe-f6d24.appspot.com\"}","GCLOUD_PROJECT":"netflix-stripe-f6d24","EVENTARC_CLOUD_EVENT_SOURCE":"projects/netflix-stripe-f6d24/locations/us-central1/functions/events"},"runtime":"nodejs16","dockerRegistry":"ARTIFACT_REGISTRY"},"versionId":"1","updateTime":"2023-03-02T14:26:44Z","buildId":"4858ab79-e6e8-42d3-a888-70452249abb7","buildName":"projects/705360736424/locations/us-central1/builds/4858ab79-e6e8-42d3-a888-70452249abb7"}}
+[debug] [2023-03-02T14:27:11.638Z] [create-default-us-central1-events] Retrying task index 0
+[debug] [2023-03-02T14:27:11.639Z] >>> [apiv2][query] GET https://cloudfunctions.googleapis.com/v1/operations/bmV0ZmxpeC1zdHJpcGUtZjZkMjQvdXMtY2VudHJhbDEvZXZlbnRzL1VxQXNoWDFVVXpj [none]
+[debug] [2023-03-02T14:27:11.877Z] <<< [apiv2][status] GET https://cloudfunctions.googleapis.com/v1/operations/bmV0ZmxpeC1zdHJpcGUtZjZkMjQvdXMtY2VudHJhbDEvZXZlbnRzL1VxQXNoWDFVVXpj 200
+[debug] [2023-03-02T14:27:11.877Z] <<< [apiv2][body] GET https://cloudfunctions.googleapis.com/v1/operations/bmV0ZmxpeC1zdHJpcGUtZjZkMjQvdXMtY2VudHJhbDEvZXZlbnRzL1VxQXNoWDFVVXpj {"name":"operations/bmV0ZmxpeC1zdHJpcGUtZjZkMjQvdXMtY2VudHJhbDEvZXZlbnRzL1VxQXNoWDFVVXpj","metadata":{"@type":"type.googleapis.com/google.cloud.functions.v1.OperationMetadataV1","target":"projects/netflix-stripe-f6d24/locations/us-central1/functions/events","type":"CREATE_FUNCTION","request":{"@type":"type.googleapis.com/google.cloud.functions.v1.CloudFunction","name":"projects/netflix-stripe-f6d24/locations/us-central1/functions/events","httpsTrigger":{"securityLevel":"SECURE_ALWAYS"},"entryPoint":"events","labels":{"deployment-tool":"cli-firebase","firebase-functions-hash":"9676503fa0dbe52dedc28adc709f6e1abdb853f4"},"sourceUploadUrl":"https://storage.googleapis.com/uploads-925139283392.us-central1.cloudfunctions.appspot.com/ce28fc8c-4c5f-4fce-ad2b-00a40c0a3191.zip?GoogleAccessId=service-705360736424@gcf-admin-robot.iam.gserviceaccount.com&Expires=1677769003&Signature=CpQllg3eW1G5iV7%2BsZ6jwThT8w4n4A3evHl50OJUXM17q1c54PE3fn3mrNbyCKjaG9y5WeOPTNGZdrZ2msEfZtKxFgOdqJ6zBJoaMJZOmfZihiUCs%2FpdFyT5DOZ5K76DvcbDyydT3fv%2BE081XFeZtHqDxhdlCY43tCFfmipPmfanYYFXbZ7%2BvJvghzvPPbihRITTAcxGkJmHYM8g8vFNIEVA0xZ4o76ja8RAR6eNSQy%2BRiC3BB3T1tb1LOeYAKMbw648NeyW4haPP%2FYVKUumZUYMmvovZOQCqEQIlQbl3H0dJrZ2tgg%2B5IBzpUsOKfnEJGELCBdlcDkMtdm7A5iR%2Bw%3D%3D","environmentVariables":{"FIREBASE_CONFIG":"{\"projectId\":\"netflix-stripe-f6d24\",\"storageBucket\":\"netflix-stripe-f6d24.appspot.com\"}","GCLOUD_PROJECT":"netflix-stripe-f6d24","EVENTARC_CLOUD_EVENT_SOURCE":"projects/netflix-stripe-f6d24/locations/us-central1/functions/events"},"runtime":"nodejs16","dockerRegistry":"ARTIFACT_REGISTRY"},"versionId":"1","updateTime":"2023-03-02T14:26:44Z","buildId":"4858ab79-e6e8-42d3-a888-70452249abb7","buildName":"projects/705360736424/locations/us-central1/builds/4858ab79-e6e8-42d3-a888-70452249abb7"}}
+[debug] [2023-03-02T14:27:21.878Z] [create-default-us-central1-events] Retrying task index 0
+[debug] [2023-03-02T14:27:21.878Z] >>> [apiv2][query] GET https://cloudfunctions.googleapis.com/v1/operations/bmV0ZmxpeC1zdHJpcGUtZjZkMjQvdXMtY2VudHJhbDEvZXZlbnRzL1VxQXNoWDFVVXpj [none]
+[debug] [2023-03-02T14:27:22.115Z] <<< [apiv2][status] GET https://cloudfunctions.googleapis.com/v1/operations/bmV0ZmxpeC1zdHJpcGUtZjZkMjQvdXMtY2VudHJhbDEvZXZlbnRzL1VxQXNoWDFVVXpj 200
+[debug] [2023-03-02T14:27:22.115Z] <<< [apiv2][body] GET https://cloudfunctions.googleapis.com/v1/operations/bmV0ZmxpeC1zdHJpcGUtZjZkMjQvdXMtY2VudHJhbDEvZXZlbnRzL1VxQXNoWDFVVXpj {"name":"operations/bmV0ZmxpeC1zdHJpcGUtZjZkMjQvdXMtY2VudHJhbDEvZXZlbnRzL1VxQXNoWDFVVXpj","metadata":{"@type":"type.googleapis.com/google.cloud.functions.v1.OperationMetadataV1","target":"projects/netflix-stripe-f6d24/locations/us-central1/functions/events","type":"CREATE_FUNCTION","request":{"@type":"type.googleapis.com/google.cloud.functions.v1.CloudFunction","name":"projects/netflix-stripe-f6d24/locations/us-central1/functions/events","httpsTrigger":{"securityLevel":"SECURE_ALWAYS"},"entryPoint":"events","labels":{"deployment-tool":"cli-firebase","firebase-functions-hash":"9676503fa0dbe52dedc28adc709f6e1abdb853f4"},"sourceUploadUrl":"https://storage.googleapis.com/uploads-925139283392.us-central1.cloudfunctions.appspot.com/ce28fc8c-4c5f-4fce-ad2b-00a40c0a3191.zip?GoogleAccessId=service-705360736424@gcf-admin-robot.iam.gserviceaccount.com&Expires=1677769003&Signature=CpQllg3eW1G5iV7%2BsZ6jwThT8w4n4A3evHl50OJUXM17q1c54PE3fn3mrNbyCKjaG9y5WeOPTNGZdrZ2msEfZtKxFgOdqJ6zBJoaMJZOmfZihiUCs%2FpdFyT5DOZ5K76DvcbDyydT3fv%2BE081XFeZtHqDxhdlCY43tCFfmipPmfanYYFXbZ7%2BvJvghzvPPbihRITTAcxGkJmHYM8g8vFNIEVA0xZ4o76ja8RAR6eNSQy%2BRiC3BB3T1tb1LOeYAKMbw648NeyW4haPP%2FYVKUumZUYMmvovZOQCqEQIlQbl3H0dJrZ2tgg%2B5IBzpUsOKfnEJGELCBdlcDkMtdm7A5iR%2Bw%3D%3D","environmentVariables":{"FIREBASE_CONFIG":"{\"projectId\":\"netflix-stripe-f6d24\",\"storageBucket\":\"netflix-stripe-f6d24.appspot.com\"}","GCLOUD_PROJECT":"netflix-stripe-f6d24","EVENTARC_CLOUD_EVENT_SOURCE":"projects/netflix-stripe-f6d24/locations/us-central1/functions/events"},"runtime":"nodejs16","dockerRegistry":"ARTIFACT_REGISTRY"},"versionId":"1","updateTime":"2023-03-02T14:26:44Z","buildId":"4858ab79-e6e8-42d3-a888-70452249abb7","buildName":"projects/705360736424/locations/us-central1/builds/4858ab79-e6e8-42d3-a888-70452249abb7"}}
+[debug] [2023-03-02T14:27:32.117Z] [create-default-us-central1-events] Retrying task index 0
+[debug] [2023-03-02T14:27:32.118Z] >>> [apiv2][query] GET https://cloudfunctions.googleapis.com/v1/operations/bmV0ZmxpeC1zdHJpcGUtZjZkMjQvdXMtY2VudHJhbDEvZXZlbnRzL1VxQXNoWDFVVXpj [none]
+[debug] [2023-03-02T14:27:32.369Z] <<< [apiv2][status] GET https://cloudfunctions.googleapis.com/v1/operations/bmV0ZmxpeC1zdHJpcGUtZjZkMjQvdXMtY2VudHJhbDEvZXZlbnRzL1VxQXNoWDFVVXpj 200
+[debug] [2023-03-02T14:27:32.369Z] <<< [apiv2][body] GET https://cloudfunctions.googleapis.com/v1/operations/bmV0ZmxpeC1zdHJpcGUtZjZkMjQvdXMtY2VudHJhbDEvZXZlbnRzL1VxQXNoWDFVVXpj {"name":"operations/bmV0ZmxpeC1zdHJpcGUtZjZkMjQvdXMtY2VudHJhbDEvZXZlbnRzL1VxQXNoWDFVVXpj","metadata":{"@type":"type.googleapis.com/google.cloud.functions.v1.OperationMetadataV1","target":"projects/netflix-stripe-f6d24/locations/us-central1/functions/events","type":"CREATE_FUNCTION","request":{"@type":"type.googleapis.com/google.cloud.functions.v1.CloudFunction","name":"projects/netflix-stripe-f6d24/locations/us-central1/functions/events","httpsTrigger":{"securityLevel":"SECURE_ALWAYS"},"entryPoint":"events","labels":{"deployment-tool":"cli-firebase","firebase-functions-hash":"9676503fa0dbe52dedc28adc709f6e1abdb853f4"},"sourceUploadUrl":"https://storage.googleapis.com/uploads-925139283392.us-central1.cloudfunctions.appspot.com/ce28fc8c-4c5f-4fce-ad2b-00a40c0a3191.zip?GoogleAccessId=service-705360736424@gcf-admin-robot.iam.gserviceaccount.com&Expires=1677769003&Signature=CpQllg3eW1G5iV7%2BsZ6jwThT8w4n4A3evHl50OJUXM17q1c54PE3fn3mrNbyCKjaG9y5WeOPTNGZdrZ2msEfZtKxFgOdqJ6zBJoaMJZOmfZihiUCs%2FpdFyT5DOZ5K76DvcbDyydT3fv%2BE081XFeZtHqDxhdlCY43tCFfmipPmfanYYFXbZ7%2BvJvghzvPPbihRITTAcxGkJmHYM8g8vFNIEVA0xZ4o76ja8RAR6eNSQy%2BRiC3BB3T1tb1LOeYAKMbw648NeyW4haPP%2FYVKUumZUYMmvovZOQCqEQIlQbl3H0dJrZ2tgg%2B5IBzpUsOKfnEJGELCBdlcDkMtdm7A5iR%2Bw%3D%3D","environmentVariables":{"FIREBASE_CONFIG":"{\"projectId\":\"netflix-stripe-f6d24\",\"storageBucket\":\"netflix-stripe-f6d24.appspot.com\"}","GCLOUD_PROJECT":"netflix-stripe-f6d24","EVENTARC_CLOUD_EVENT_SOURCE":"projects/netflix-stripe-f6d24/locations/us-central1/functions/events"},"runtime":"nodejs16","dockerRegistry":"ARTIFACT_REGISTRY"},"versionId":"1","updateTime":"2023-03-02T14:27:27Z","buildId":"4858ab79-e6e8-42d3-a888-70452249abb7","buildName":"projects/705360736424/locations/us-central1/builds/4858ab79-e6e8-42d3-a888-70452249abb7"},"done":true,"error":{"code":3,"message":"Build failed: ...ssing: react-is@18.2.0 from lock file\nnpm ERR! Missing: kleur@3.0.3 from lock file\nnpm ERR! Missing: sisteransi@1.0.5 from lock file\nnpm ERR! Missing: is-core-module@2.11.0 from lock file\nnpm ERR! Missing: path-parse@1.0.7 from lock file\nnpm ERR! Missing: supports-preserve-symlinks-flag@1.0.0 from lock file\nnpm ERR! Missing: resolve-from@5.0.0 from lock file\nnpm ERR! Missing: buffer-from@1.1.2 from lock file\nnpm ERR! Missing: char-regex@1.0.2 from lock file\nnpm ERR! Missing: glob@7.2.3 from lock file\nnpm ERR! Missing: minimatch@3.1.2 from lock file\nnpm ERR! Missing: is-number@7.0.0 from lock file\nnpm ERR! Missing: picocolors@1.0.0 from lock file\nnpm ERR! Missing: convert-source-map@1.9.0 from lock file\nnpm ERR! Missing: makeerror@1.0.12 from lock file\nnpm ERR! Missing: tmpl@1.0.5 from lock file\nnpm ERR! Missing: yallist@3.1.1 from lock file\nnpm ERR! Missing: ansi-styles@3.2.1 from lock file\nnpm ERR! Missing: escape-string-regexp@1.0.5 from lock file\nnpm ERR! Missing: supports-color@5.5.0 from lock file\nnpm ERR! Missing: color-convert@1.9.3 from lock file\nnpm ERR! Missing: color-name@1.1.3 from lock file\nnpm ERR! Missing: has-flag@3.0.0 from lock file\nnpm ERR! Missing: locate-path@5.0.0 from lock file\nnpm ERR! Missing: argparse@1.0.10 from lock file\nnpm ERR! Missing: sprintf-js@1.0.3 from lock file\nnpm ERR! Missing: p-locate@4.1.0 from lock file\nnpm ERR! Missing: p-limit@2.3.0 from lock file\nnpm ERR! Missing: p-try@2.2.0 from lock file\nnpm ERR! Missing: minimatch@3.1.2 from lock file\nnpm ERR! Missing: brace-expansion@1.1.11 from lock file\nnpm ERR! Missing: cliui@8.0.1 from lock file\nnpm ERR! Missing: yargs-parser@21.1.1 from lock file\nnpm ERR! Missing: minimatch@3.1.2 from lock file\nnpm ERR! Missing: brace-expansion@1.1.11 from lock file\nnpm ERR! Missing: minimatch@3.1.2 from lock file\nnpm ERR! Missing: brace-expansion@1.1.11 from lock file\nnpm ERR! Missing: locate-path@5.0.0 from lock file\nnpm ERR! Missing: p-locate@4.1.0 from lock file\nnpm ERR! Missing: p-limit@2.3.0 from lock file\nnpm ERR! Missing: brace-expansion@1.1.11 from lock file\nnpm ERR! \nnpm ERR! Clean install a project\nnpm ERR! \nnpm ERR! Usage:\nnpm ERR! npm ci\nnpm ERR! \nnpm ERR! Options:\nnpm ERR! [-S|--save|--no-save|--save-prod|--save-dev|--save-optional|--save-peer|--save-bundle]\nnpm ERR! [-E|--save-exact] [-g|--global] [--global-style] [--legacy-bundling]\nnpm ERR! [--omit <dev|optional|peer> [--omit <dev|optional|peer> ...]]\nnpm ERR! [--strict-peer-deps] [--no-package-lock] [--foreground-scripts]\nnpm ERR! [--ignore-scripts] [--no-audit] [--no-bin-links] [--no-fund] [--dry-run]\nnpm ERR! [-w|--workspace <workspace-name> [-w|--workspace <workspace-name> ...]]\nnpm ERR! [-ws|--workspaces] [--include-workspace-root] [--install-links]\nnpm ERR! \nnpm ERR! aliases: clean-install, ic, install-clean, isntall-clean\nnpm ERR! \nnpm ERR! Run \"npm help ci\" for more info\n\nnpm ERR! A complete log of this run can be found in:\nnpm ERR!     /www-data-home/.npm/_logs/2023-03-02T14_27_18_215Z-debug-0.log; Error ID: beaf8772"}}
+[debug] [2023-03-02T14:27:32.369Z] Got source token undefined for region us-central1
+[error] Build failed: ...ssing: react-is@18.2.0 from lock file
+npm ERR! Missing: kleur@3.0.3 from lock file
+npm ERR! Missing: sisteransi@1.0.5 from lock file
+npm ERR! Missing: is-core-module@2.11.0 from lock file
+npm ERR! Missing: path-parse@1.0.7 from lock file
+npm ERR! Missing: supports-preserve-symlinks-flag@1.0.0 from lock file
+npm ERR! Missing: resolve-from@5.0.0 from lock file
+npm ERR! Missing: buffer-from@1.1.2 from lock file
+npm ERR! Missing: char-regex@1.0.2 from lock file
+npm ERR! Missing: glob@7.2.3 from lock file
+npm ERR! Missing: minimatch@3.1.2 from lock file
+npm ERR! Missing: is-number@7.0.0 from lock file
+npm ERR! Missing: picocolors@1.0.0 from lock file
+npm ERR! Missing: convert-source-map@1.9.0 from lock file
+npm ERR! Missing: makeerror@1.0.12 from lock file
+npm ERR! Missing: tmpl@1.0.5 from lock file
+npm ERR! Missing: yallist@3.1.1 from lock file
+npm ERR! Missing: ansi-styles@3.2.1 from lock file
+npm ERR! Missing: escape-string-regexp@1.0.5 from lock file
+npm ERR! Missing: supports-color@5.5.0 from lock file
+npm ERR! Missing: color-convert@1.9.3 from lock file
+npm ERR! Missing: color-name@1.1.3 from lock file
+npm ERR! Missing: has-flag@3.0.0 from lock file
+npm ERR! Missing: locate-path@5.0.0 from lock file
+npm ERR! Missing: argparse@1.0.10 from lock file
+npm ERR! Missing: sprintf-js@1.0.3 from lock file
+npm ERR! Missing: p-locate@4.1.0 from lock file
+npm ERR! Missing: p-limit@2.3.0 from lock file
+npm ERR! Missing: p-try@2.2.0 from lock file
+npm ERR! Missing: minimatch@3.1.2 from lock file
+npm ERR! Missing: brace-expansion@1.1.11 from lock file
+npm ERR! Missing: cliui@8.0.1 from lock file
+npm ERR! Missing: yargs-parser@21.1.1 from lock file
+npm ERR! Missing: minimatch@3.1.2 from lock file
+npm ERR! Missing: brace-expansion@1.1.11 from lock file
+npm ERR! Missing: minimatch@3.1.2 from lock file
+npm ERR! Missing: brace-expansion@1.1.11 from lock file
+npm ERR! Missing: locate-path@5.0.0 from lock file
+npm ERR! Missing: p-locate@4.1.0 from lock file
+npm ERR! Missing: p-limit@2.3.0 from lock file
+npm ERR! Missing: brace-expansion@1.1.11 from lock file
+npm ERR! 
+npm ERR! Clean install a project
+npm ERR! 
+npm ERR! Usage:
+npm ERR! npm ci
+npm ERR! 
+npm ERR! Options:
+npm ERR! [-S|--save|--no-save|--save-prod|--save-dev|--save-optional|--save-peer|--save-bundle]
+npm ERR! [-E|--save-exact] [-g|--global] [--global-style] [--legacy-bundling]
+npm ERR! [--omit <dev|optional|peer> [--omit <dev|optional|peer> ...]]
+npm ERR! [--strict-peer-deps] [--no-package-lock] [--foreground-scripts]
+npm ERR! [--ignore-scripts] [--no-audit] [--no-bin-links] [--no-fund] [--dry-run]
+npm ERR! [-w|--workspace <workspace-name> [-w|--workspace <workspace-name> ...]]
+npm ERR! [-ws|--workspaces] [--include-workspace-root] [--install-links]
+npm ERR! 
+npm ERR! aliases: clean-install, ic, install-clean, isntall-clean
+npm ERR! 
+npm ERR! Run "npm help ci" for more info
+
+npm ERR! A complete log of this run can be found in:
+npm ERR!     /www-data-home/.npm/_logs/2023-03-02T14_27_18_215Z-debug-0.log; Error ID: beaf8772
+[debug] [2023-03-02T14:27:32.381Z] Total Function Deployment time: 48624
+[debug] [2023-03-02T14:27:32.381Z] 1 Functions Deployed
+[debug] [2023-03-02T14:27:32.386Z] 1 Functions Errored
+[debug] [2023-03-02T14:27:32.386Z] 0 Function Deployments Aborted
+[debug] [2023-03-02T14:27:32.386Z] Average Function Deployment time: 48623
+[info] 
+[info] Functions deploy had errors with the following functions:
+	events(us-central1)
+[debug] [2023-03-02T14:27:32.485Z] Not printing URL for HTTPS function. Typically this means it didn't match a filter or we failed deployment
+[info] i  functions: cleaning up build files... 
+[debug] [2023-03-02T14:27:32.487Z] >>> [apiv2][query] DELETE https://artifactregistry.googleapis.com/v1beta2/projects/netflix-stripe-f6d24/locations/us-central1/repositories/gcf-artifacts/packages/events [none]
+[debug] [2023-03-02T14:27:32.489Z] >>> [apiv2][query] GET https://us.gcr.io/v2/netflix-stripe-f6d24/gcf/us-central1/tags/list [none]
+[debug] [2023-03-02T14:27:32.750Z] <<< [apiv2][status] DELETE https://artifactregistry.googleapis.com/v1beta2/projects/netflix-stripe-f6d24/locations/us-central1/repositories/gcf-artifacts/packages/events 404
+[debug] [2023-03-02T14:27:32.750Z] <<< [apiv2][body] DELETE https://artifactregistry.googleapis.com/v1beta2/projects/netflix-stripe-f6d24/locations/us-central1/repositories/gcf-artifacts/packages/events {"error":{"code":404,"message":"Package \"projects/netflix-stripe-f6d24/locations/us-central1/repositories/gcf-artifacts/packages/events\" was not found.","status":"NOT_FOUND"}}
+[debug] [2023-03-02T14:27:34.331Z] <<< [apiv2][status] GET https://us.gcr.io/v2/netflix-stripe-f6d24/gcf/us-central1/tags/list 200
+[debug] [2023-03-02T14:27:34.332Z] <<< [apiv2][body] GET https://us.gcr.io/v2/netflix-stripe-f6d24/gcf/us-central1/tags/list {"child":[],"manifest":{},"name":"netflix-stripe-f6d24/gcf/us-central1","tags":[]}
+[debug] [2023-03-02T14:27:34.332Z] Could not find image for function projects/netflix-stripe-f6d24/locations/us-central1/functions/events
+[debug] [2023-03-02T14:27:34.332Z] Functions deploy failed.
+[debug] [2023-03-02T14:27:34.332Z] {
+  "endpoint": {
+    "id": "events",
+    "project": "netflix-stripe-f6d24",
+    "region": "us-central1",
+    "entryPoint": "events",
+    "platform": "gcfv1",
+    "runtime": "nodejs16",
+    "httpsTrigger": {},
+    "serviceAccount": null,
+    "ingressSettings": null,
+    "availableMemoryMb": null,
+    "timeoutSeconds": null,
+    "maxInstances": null,
+    "minInstances": null,
+    "vpc": null,
+    "environmentVariables": {
+      "FIREBASE_CONFIG": "{\"projectId\":\"netflix-stripe-f6d24\",\"storageBucket\":\"netflix-stripe-f6d24.appspot.com\"}",
+      "GCLOUD_PROJECT": "netflix-stripe-f6d24",
+      "EVENTARC_CLOUD_EVENT_SOURCE": "projects/netflix-stripe-f6d24/locations/us-central1/functions/events"
+    },
+    "codebase": "default",
+    "targetedByOnly": false,
+    "hash": "9676503fa0dbe52dedc28adc709f6e1abdb853f4",
+    "labels": {
+      "deployment-tool": "cli-firebase"
+    }
+  },
+  "op": "create",
+  "original": {
+    "name": "FirebaseError",
+    "children": [],
+    "exit": 1,
+    "message": "Build failed: ...ssing: react-is@18.2.0 from lock file\nnpm ERR! Missing: kleur@3.0.3 from lock file\nnpm ERR! Missing: sisteransi@1.0.5 from lock file\nnpm ERR! Missing: is-core-module@2.11.0 from lock file\nnpm ERR! Missing: path-parse@1.0.7 from lock file\nnpm ERR! Missing: supports-preserve-symlinks-flag@1.0.0 from lock file\nnpm ERR! Missing: resolve-from@5.0.0 from lock file\nnpm ERR! Missing: buffer-from@1.1.2 from lock file\nnpm ERR! Missing: char-regex@1.0.2 from lock file\nnpm ERR! Missing: glob@7.2.3 from lock file\nnpm ERR! Missing: minimatch@3.1.2 from lock file\nnpm ERR! Missing: is-number@7.0.0 from lock file\nnpm ERR! Missing: picocolors@1.0.0 from lock file\nnpm ERR! Missing: convert-source-map@1.9.0 from lock file\nnpm ERR! Missing: makeerror@1.0.12 from lock file\nnpm ERR! Missing: tmpl@1.0.5 from lock file\nnpm ERR! Missing: yallist@3.1.1 from lock file\nnpm ERR! Missing: ansi-styles@3.2.1 from lock file\nnpm ERR! Missing: escape-string-regexp@1.0.5 from lock file\nnpm ERR! Missing: supports-color@5.5.0 from lock file\nnpm ERR! Missing: color-convert@1.9.3 from lock file\nnpm ERR! Missing: color-name@1.1.3 from lock file\nnpm ERR! Missing: has-flag@3.0.0 from lock file\nnpm ERR! Missing: locate-path@5.0.0 from lock file\nnpm ERR! Missing: argparse@1.0.10 from lock file\nnpm ERR! Missing: sprintf-js@1.0.3 from lock file\nnpm ERR! Missing: p-locate@4.1.0 from lock file\nnpm ERR! Missing: p-limit@2.3.0 from lock file\nnpm ERR! Missing: p-try@2.2.0 from lock file\nnpm ERR! Missing: minimatch@3.1.2 from lock file\nnpm ERR! Missing: brace-expansion@1.1.11 from lock file\nnpm ERR! Missing: cliui@8.0.1 from lock file\nnpm ERR! Missing: yargs-parser@21.1.1 from lock file\nnpm ERR! Missing: minimatch@3.1.2 from lock file\nnpm ERR! Missing: brace-expansion@1.1.11 from lock file\nnpm ERR! Missing: minimatch@3.1.2 from lock file\nnpm ERR! Missing: brace-expansion@1.1.11 from lock file\nnpm ERR! Missing: locate-path@5.0.0 from lock file\nnpm ERR! Missing: p-locate@4.1.0 from lock file\nnpm ERR! Missing: p-limit@2.3.0 from lock file\nnpm ERR! Missing: brace-expansion@1.1.11 from lock file\nnpm ERR! \nnpm ERR! Clean install a project\nnpm ERR! \nnpm ERR! Usage:\nnpm ERR! npm ci\nnpm ERR! \nnpm ERR! Options:\nnpm ERR! [-S|--save|--no-save|--save-prod|--save-dev|--save-optional|--save-peer|--save-bundle]\nnpm ERR! [-E|--save-exact] [-g|--global] [--global-style] [--legacy-bundling]\nnpm ERR! [--omit <dev|optional|peer> [--omit <dev|optional|peer> ...]]\nnpm ERR! [--strict-peer-deps] [--no-package-lock] [--foreground-scripts]\nnpm ERR! [--ignore-scripts] [--no-audit] [--no-bin-links] [--no-fund] [--dry-run]\nnpm ERR! [-w|--workspace <workspace-name> [-w|--workspace <workspace-name> ...]]\nnpm ERR! [-ws|--workspaces] [--include-workspace-root] [--install-links]\nnpm ERR! \nnpm ERR! aliases: clean-install, ic, install-clean, isntall-clean\nnpm ERR! \nnpm ERR! Run \"npm help ci\" for more info\n\nnpm ERR! A complete log of this run can be found in:\nnpm ERR!     /www-data-home/.npm/_logs/2023-03-02T14_27_18_215Z-debug-0.log; Error ID: beaf8772",
+    "status": 3
+  }
+}
+[debug] [2023-03-02T14:27:34.427Z] Error: Failed to create function events in region us-central1
+    at /Users/nikolarancnik/.cache/firebase/tools/lib/node_modules/firebase-tools/lib/deploy/functions/release/fabricator.js:48:11
+    at runMicrotasks (<anonymous>)
+    at processTicksAndRejections (node:internal/process/task_queues:96:5)
+    at async Fabricator.createV1Function (/Users/nikolarancnik/.cache/firebase/tools/lib/node_modules/firebase-tools/lib/deploy/functions/release/fabricator.js:177:32)
+    at async Fabricator.createEndpoint (/Users/nikolarancnik/.cache/firebase/tools/lib/node_modules/firebase-tools/lib/deploy/functions/release/fabricator.js:129:13)
+    at async handle (/Users/nikolarancnik/.cache/firebase/tools/lib/node_modules/firebase-tools/lib/deploy/functions/release/fabricator.js:85:17)
+[error] 
+[error] Error: There was an error deploying functions

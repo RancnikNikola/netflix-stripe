@@ -1,23 +1,45 @@
-import logo from './logo.svg';
-import './App.css';
+import { useEffect } from 'react';
+import { useSelector, useDispatch } from 'react-redux';
+import { selectUser } from './store/user/userSlice';
+import { Routes, Route } from 'react-router-dom';
+import { auth } from './utils/firebase/firebase.utils';
+import { login, logout } from './store/user/userSlice';
 
-function App() {
+import Home from './pages/home/home.component';
+import Login from './pages/login/login.component';
+import Profile from './pages/profile/profile.component';
+import './App.scss';
+
+const App = () => {
+
+  const user = useSelector(selectUser);
+  const dispatch = useDispatch();
+  
+  useEffect(() => {
+    const unsubscribe = auth.onAuthStateChanged((userAuth) => {
+      if (userAuth) {
+        dispatch(login({
+          uid: userAuth.uid,
+          email: userAuth.email
+        }));
+      } else {
+        dispatch(logout());
+      }
+    });
+
+    return unsubscribe;
+  }, [dispatch]);
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+        {!user ? (
+           <Login />
+        ) : (
+          <Routes>
+            <Route path="/" element={ <Home />} />
+            <Route path="/profile" element={ <Profile /> } />
+          </Routes>
+        )}
     </div>
   );
 }
